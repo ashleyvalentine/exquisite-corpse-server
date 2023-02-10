@@ -20,7 +20,7 @@ io.on('connection', (socket) => {
       userData: getUsers(user.room)
     })
 
-    callback({ status: 'ok' })
+    return callback(error)
   })
 
   socket.on('disconnect', () => {
