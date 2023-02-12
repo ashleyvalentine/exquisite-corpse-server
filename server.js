@@ -23,6 +23,10 @@ io.on('connection', (socket) => {
     return callback(error)
   })
 
+  socket.on('drawing', (data) => {
+    io.to(data.room).emit('drawing', data)
+  })
+
   socket.on('disconnect', () => {
     console.log('disconnected')
     const user = deleteUser(socket.id)
