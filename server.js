@@ -24,7 +24,7 @@ io.on('connection', (socket) => {
   })
 
   socket.on('drawing', (data) => {
-    io.to(data.room).emit('drawing', data)
+    socket.to(data.room).emit('drawing', data)
   })
 
   socket.on('disconnect', () => {
